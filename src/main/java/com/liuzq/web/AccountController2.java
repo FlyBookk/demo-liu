@@ -1,5 +1,6 @@
 package com.liuzq.web;
 
+import com.liuzq.entity.Account;
 import com.liuzq.service.AccountService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by fangzhipeng on 2017/4/20.
+ * @Author liu
+ * @Description
+ * @Date 2019/11/26 17:31
+ * @Version  1.0
  */
 @RestController
 @RequestMapping("/account")
@@ -19,4 +23,5 @@ public class AccountController2 {
     public void transfer(){
         accountService.transfer();
     }
+
 }
