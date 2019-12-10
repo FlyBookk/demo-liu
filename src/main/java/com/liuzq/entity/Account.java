@@ -4,8 +4,8 @@ package com.liuzq.entity;
  *
  */
 public class Account {
-    private int id ;
-    private String name ;
+    private int id;
+    private String name;
     private double money;
 
     public int getId() {

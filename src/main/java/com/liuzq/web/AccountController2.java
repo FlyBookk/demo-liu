@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Author liu
  * @Description
  * @Date 2019/11/26 17:31
- * @Version  1.0
+ * @Version 1.0
  */
 @RestController
 @RequestMapping("/account")
@@ -20,7 +20,7 @@ public class AccountController2 {
     AccountService2 accountService;
 
     @RequestMapping(value = "transfer", method = RequestMethod.GET)
-    public void transfer(){
+    public void transfer() {
         accountService.transfer();
     }
 

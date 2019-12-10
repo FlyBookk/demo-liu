@@ -2,8 +2,8 @@
 
 <configuration scan="true" scanPeriod="10 seconds">
     <!-- 属性设置 -->
-    <property name="cmpName" value="liuzq" />
-    <property name="appName" value="springboot-liuzq" />
+    <property name="cmpName" value="liuzq"/>
+    <property name="appName" value="springboot-liuzq"/>
     <property name="LOG_HOME" value="logs"/>
     <property name="LOG_PREFIX" value="springboot-liuzq"/>
 
@@ -16,7 +16,9 @@
             <totalSizeCap>20GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
-            <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd HH:mm:ss.SSS}#-#%X{X-B3-TraceId}-#-#%-5level#-#%logger{35}#-#%msg%n</pattern>
+            <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd
+                HH:mm:ss.SSS}#-#%X{X-B3-TraceId}-#-#%-5level#-#%logger{35}#-#%msg%n
+            </pattern>
         </encoder>
     </appender>
 
@@ -32,13 +34,17 @@
             <totalSizeCap>20GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
-            <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd HH:mm:ss.SSS}#-#%X{X-B3-TraceId}-#-#%-5level#-#%logger{35}#-#%msg%n</pattern>
+            <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd
+                HH:mm:ss.SSS}#-#%X{X-B3-TraceId}-#-#%-5level#-#%logger{35}#-#%msg%n
+            </pattern>
         </encoder>
     </appender>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd HH:mm:ss.SSS}#-#%X{X-B3-TraceId}-#-#%-5level#-#%logger{35}#-#%msg%n</pattern>
+            <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd
+                HH:mm:ss.SSS}#-#%X{X-B3-TraceId}-#-#%-5level#-#%logger{35}#-#%msg%n
+            </pattern>
         </encoder>
     </appender>
 

@@ -13,12 +13,12 @@ import java.util.List;
  * @Author liu
  * @Description
  * @Date 2019/11/26 17:31
- * @Version  1.0
+ * @Version 1.0
  */
 @RestController
 @RequestMapping("/account")
 public class AccountController {
-    Logger logger= LoggerFactory.getLogger(this.getClass());
+    Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     AccountService accountService;
 
@@ -35,21 +35,21 @@ public class AccountController {
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public String updateAccount(@PathVariable("id") int id, @RequestParam(value = "name", required = true) String name,
                                 @RequestParam(value = "money", required = true) double money) {
-        int t= accountService.update(name,money,id);
-        if(t==1) {
+        int t = accountService.update(name, money, id);
+        if (t == 1) {
             return "success";
-        }else {
+        } else {
             return "fail";
         }
 
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String delete(@PathVariable(value = "id")int id) {
-        int t= accountService.delete(id);
-        if(t==1) {
+    public String delete(@PathVariable(value = "id") int id) {
+        int t = accountService.delete(id);
+        if (t == 1) {
             return "success";
-        }else {
+        } else {
             return "fail";
         }
 
@@ -59,12 +59,10 @@ public class AccountController {
     public String postAccount(@RequestParam(value = "name") String name,
                               @RequestParam(value = "money") double money) {
 
-       int t= accountService.add(name,money);
-       logger.info("新增数据结果条数：{}",t);
-       return t==1?"success":"fail";
+        int t = accountService.add(name, money);
+        logger.info("新增数据结果条数：{}", t);
+        return t == 1 ? "success" : "fail";
     }
-
-
 
 
 }

@@ -15,7 +15,7 @@ public interface AccountMapper {
     int add(@Param("name") String name, @Param("money") double money);
 
     @Update("update account set name = #{name}, money = #{money} where id = #{id}")
-    int update(@Param("name") String name, @Param("money") double money, @Param("id") int  id);
+    int update(@Param("name") String name, @Param("money") double money, @Param("id") int id);
 
     @Delete("delete from account where id = #{id}")
     int delete(int id);
