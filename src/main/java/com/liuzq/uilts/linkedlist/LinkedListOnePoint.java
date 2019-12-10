@@ -151,8 +151,8 @@ public class LinkedListOnePoint {
 
 
     public static void main(String[] args) {
-        int[] ints = twoSum1(new int[]{2, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 15}, 17);
-        System.out.println(JSON.toJSONString(ints));
+//        int[] ints = twoSum1(new int[]{2, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 152, 7, 11, 15, 2, 7, 11, 15, 2, 7, 11, 15}, 17);
+//        System.out.println(JSON.toJSONString(ints));
         LinkedListOnePoint list = new LinkedListOnePoint();
         System.out.println(list.isEmpty());            //true
         System.out.println(list.size());               //0
