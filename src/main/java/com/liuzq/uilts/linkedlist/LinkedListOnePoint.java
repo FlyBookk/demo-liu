@@ -1,4 +1,4 @@
-package com.liuzq.bean.linkedlist;
+package com.liuzq.uilts.linkedlist;
 
 import com.alibaba.fastjson.JSON;
 

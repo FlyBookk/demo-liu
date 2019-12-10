@@ -1,4 +1,4 @@
-package com.liuzq.bean.linkedlist;
+package com.liuzq.uilts.linkedlist;
 
 /**
  * https://www.cnblogs.com/Y-oung/p/8886142.html
