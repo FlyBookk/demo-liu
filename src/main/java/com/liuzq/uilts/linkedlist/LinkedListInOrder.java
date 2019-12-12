@@ -78,6 +78,8 @@ public class LinkedListInOrder {
     }
     
     public static void main(String[] args) {
+        String str="2324423";
+        str.hashCode();
         LinkedListInOrder list = new LinkedListInOrder();
         System.out.println(list.isEmpty());            //true
         System.out.println(list.size());               //0
