@@ -1,8 +1,6 @@
 package com.liuzq.entity;
 
-/**
- * Created by fangzhipeng on 2017/4/20.
- */
+
 public class Account {
     private int id ;
     private String name ;
