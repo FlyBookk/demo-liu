@@ -24,6 +24,7 @@ import javax.annotation.Resource;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class WeChatExternalContactService {
 
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(requestBody, headers);
         List<List<String>> result = Lists.newArrayList();
-        result.add(List.of("name", "unionID", "externalUserId"));
+        result.add(Arrays.asList("name", "unionID", "externalUserId"));
         try {
             ResponseEntity<WeChatExternalContactResponse> response = restTemplate.postForEntity(API_URL, request, WeChatExternalContactResponse.class);
             log.info("QW获取外部联系人信息：{}", JSON.toJSONString(response));
@@ -58,7 +59,7 @@ public class WeChatExternalContactService {
                 externalContactList.stream().forEach(externalContactInfo -> {
                     WeChatExternalContactResponse.ExternalContactInfo.ExternalContact externalContact = externalContactInfo.getExternalContact();
                     log.info("外部联系人信息：{}", JSON.toJSONString(externalContact));
-                    result.add(List.of(externalContact.getName(), StringUtils.isNotEmpty(externalContact.getUnionid()) ? externalContact.getUnionid() : "--", externalContact.getExternalUserid()));
+                    result.add(Arrays.asList(externalContact.getName(), StringUtils.isNotEmpty(externalContact.getUnionid()) ? externalContact.getUnionid() : "--", externalContact.getExternalUserid()));
                 });
             }
 
@@ -77,7 +78,7 @@ public class WeChatExternalContactService {
                     externalContactListCur.stream().forEach(externalContactInfo -> {
                         WeChatExternalContactResponse.ExternalContactInfo.ExternalContact externalContact = externalContactInfo.getExternalContact();
                         log.info("外部联系人信息：{}", JSON.toJSONString(externalContact));
-                        result.add(List.of(externalContact.getName(), StringUtils.isNotEmpty(externalContact.getUnionid()) ? externalContact.getUnionid() : "--", externalContact.getExternalUserid()));
+                        result.add(Arrays.asList(externalContact.getName(), StringUtils.isNotEmpty(externalContact.getUnionid()) ? externalContact.getUnionid() : "--", externalContact.getExternalUserid()));
                     });
                 }
             }
@@ -121,7 +122,7 @@ public class WeChatExternalContactService {
             e.printStackTrace();
         }
         List<List<String>> result = Lists.newArrayList();
-        result.add(List.of("userId", "name", "phone"));
+        result.add(Arrays.asList("userId", "name", "phone"));
         try (Reader reader = new FileReader(csvWFile);
              CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
             for (CSVRecord csvRecord : csvParser) {
@@ -129,7 +130,7 @@ public class WeChatExternalContactService {
                 String column1 = csvRecord.get("userId");
                 if (list.contains(column1)) {
                     // 更新字段
-                    result.add(List.of("`" + column1, csvRecord.get("微信昵称"), csvRecord.get("用户手机号")));
+                    result.add(Arrays.asList("`" + column1, csvRecord.get("微信昵称"), csvRecord.get("用户手机号")));
                     log.info(column1);
                 }
             }
